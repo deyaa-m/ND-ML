@@ -7,6 +7,7 @@ from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='docker_out.txt', level=logging.INFO)
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
 
@@ -63,6 +64,7 @@ def predict():
     # get an output prediction from the pretrained model, clf
     prediction = list(clf.predict(scaled_payload))
     # TO DO:  Log the output prediction value
+    LOG.info(f"Output Prediction: \n{prediction}")
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
