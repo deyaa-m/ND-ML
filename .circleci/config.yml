@@ -46,7 +46,7 @@ jobs:
       - run:
           name: run lint
           command: |
-            . venv/bin/activate
+            . ~/.ml/bin/activate
             make lint
 
 
