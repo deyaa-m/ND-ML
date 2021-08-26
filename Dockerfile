@@ -11,7 +11,7 @@ COPY . /app/
 ## Step 3:
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
-RUN python3.7 -m venv ~/.app && exec ~/.app/bin/activate
+RUN python3.7 -m venv ~/.app && . ~/.app/bin/activate
 RUN make install
 
 ## Step 4:
