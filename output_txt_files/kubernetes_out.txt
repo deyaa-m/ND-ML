@@ -1,1 +1,12 @@
 <paste log output from Kubernetes-mediated prediction, here>
+
+
+deyaa@deyaa-X1:~/Desktop/study/udacity/ch4/DevOps_Microservices/project-ml-microservice-kubernetes$ sudo -s
+root@deyaa-X1:/home/deyaa/Desktop/study/udacity/ch4/DevOps_Microservices/project-ml-microservice-kubernetes# export KUBECONFIG=/.kube/config 
+root@deyaa-X1:/home/deyaa/Desktop/study/udacity/ch4/DevOps_Microservices/project-ml-microservice-kubernetes# kubectl port-forward svc/flask-app 80:8000
+Error from server (NotFound): services "flask-app" not found
+root@deyaa-X1:/home/deyaa/Desktop/study/udacity/ch4/DevOps_Microservices/project-ml-microservice-kubernetes# kubectl port-forward svc/flask-service 80:8000
+Forwarding from 127.0.0.1:80 -> 80
+Forwarding from [::1]:80 -> 80
+
+Handling connection for 80
