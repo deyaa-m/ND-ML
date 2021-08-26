@@ -7,7 +7,7 @@ from sklearn.externals import joblib
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='docker_out.txt', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='output_txt_files/docker_out.txt', level=logging.INFO)
 LOG = create_logger(app)
 LOG.setLevel(logging.INFO)
 
