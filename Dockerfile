@@ -6,12 +6,14 @@ WORKDIR  /app
 
 ## Step 2:
 # Copy source code to working directory
-COPY . /app/
+COPY $PWD /app/
 
 ## Step 3:
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
-RUN python3.7 -m venv ~/.app && . ~/.app/bin/activate
+ENV VIRTUAL_ENV=~/.app
+RUN python3.7 -m venv $VIRTUAL_ENV 
+RUN ${VIRTUAL_ENV}/bin/activate
 RUN make install
 
 ## Step 4:
